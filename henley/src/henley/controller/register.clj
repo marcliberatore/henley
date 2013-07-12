@@ -1,7 +1,7 @@
 (ns henley.controller.register
-  (:use henley.view.swingui
-        henley.controller.swing-listeners))
+  (:require [henley.view.swingui :as ui]
+            [henley.controller.swing-listeners :as l]))
 
 (defn register-listeners [swingui]
-  (add-select-button-listener swingui select-button-listener [swingui])
-  (add-generate-button-listener swingui generate-button-listener [swingui]))
+  (ui/add-select-button-listener swingui l/select-button-listener [swingui])
+  (ui/add-generate-button-listener swingui l/generate-button-listener [swingui]))

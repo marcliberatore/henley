@@ -1,10 +1,10 @@
 (ns henley.core
-  (:use henley.controller.register
-        henley.view.application
-        henley.view.view)
+  (:require [henley.controller.register :as reg]
+            [henley.view.application :as appl]
+            [henley.view.view :as view])
   (:gen-class))
 
 (defn -main [& args]
-  (let [app (create-application)]
-    (register-listeners app)
-    (show app)))
+  (let [app (appl/create-application)]
+    (reg/register-listeners app)
+    (view/show app)))
