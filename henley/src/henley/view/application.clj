@@ -1,7 +1,6 @@
 (ns henley.view.application
-  (:use clojure.contrib.def
-        clojure.contrib.swing-utils
-        (henley.view view swingui uicomponents))
+  (:use (henley.view view swingui uicomponents)
+        henley.swing-utils)
   (:import (javax.swing JFileChooser)))
 
 (deftype Application []

@@ -1,7 +1,4 @@
 (ns henley.model.text-generator
-  (:use clojure.contrib.def
-        clojure.contrib.pprint
-        [clojure.contrib.duck-streams :only (read-lines)])
   (:require [clojure.string :as str]))
 
 (defn- internize [s]
@@ -21,7 +18,7 @@
                           (assoc stats :prev word)))
                       stats words)))
           {:prev (internize ".")}
-          (read-lines pathname)))
+          (str/split-lines (slurp pathname))))
 
 (defn- random-next [stats prev]
   (let [choices (get stats prev)
